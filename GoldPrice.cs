@@ -28,8 +28,7 @@ namespace MYOGoldTypePriceManagement
         private const string SelectQry = "SELECT * FROM tblPrices";
         private const string InsertQry = @"INSERT INTO tblPrices (TypeId, SellPrice, BuyPrice, DifferPrice, SellPriceColor, BuyPriceColor, SellPriceFont, BuyPriceFont) 
                                          VALUES (@TypeId, @SellPrice, @BuyPrice, @DifferPrice, @SellPriceColor, @BuyPriceColor, @SellPriceFont, @BuyPriceFont)";
-        private const string UpdateQry = @"UPDATE tblPrices SET TypeId=@TypeId, SellPrice=@SellPrice, BuyPrice=@BuyPrice, DifferPrice=@DifferPrice, 
-                                         SellPriceColor=@SellPriceColor, BuyPriceColor=@BuyPriceColor, SellPriceFont=@SellPriceFont, BuyPriceFont=@BuyPriceFont 
+        private const string UpdateQry = @"UPDATE tblPrices SET TypeId=@TypeId, SellPrice=@SellPrice, BuyPrice=@BuyPrice, DifferPrice=@DifferPrice, SellPriceColor=@SellPriceColor, BuyPriceColor=@BuyPriceColor, SellPriceFont=@SellPriceFont, BuyPriceFont=@BuyPriceFont 
                                          WHERE Id=@Id";
         private const string DeleteQry = "DELETE FROM tblPrices WHERE Id=@Id";
 

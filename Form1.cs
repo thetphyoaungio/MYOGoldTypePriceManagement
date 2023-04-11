@@ -223,10 +223,10 @@ namespace MYOGoldTypePriceManagement
 
                     if (list[0] != null)
                     {
-                        lblGoldPriceSell1.Text = list[0].SellPrice.ToString("N0");
+                        lblGoldPriceSell1.Text = list[0].SellPrice.ToString();//"N0"
                         lblGoldPriceSell1.ForeColor = Color.FromArgb((int)list[0].SellPriceColor);
                         lblGoldPriceSell1.Font = cvt.ConvertFromString(list[0].SellPriceFont) as Font;
-                        lblGoldPriceBuy1.Text = list[0].BuyPrice.ToString("N0");
+                        lblGoldPriceBuy1.Text = list[0].BuyPrice.ToString();//"N0"
                         lblGoldPriceBuy1.ForeColor = Color.FromArgb((int)list[0].BuyPriceColor);
                         lblGoldPriceBuy1.Font = cvt.ConvertFromString(list[0].BuyPriceFont) as Font;
                     }
@@ -238,10 +238,10 @@ namespace MYOGoldTypePriceManagement
 
                     if (list[1] != null)
                     {
-                        lblGoldPriceSell2.Text = list[1].SellPrice.ToString("N0");
+                        lblGoldPriceSell2.Text = list[1].SellPrice.ToString();//"N0"
                         lblGoldPriceSell2.ForeColor = Color.FromArgb((int)list[1].SellPriceColor);
                         lblGoldPriceSell2.Font = cvt.ConvertFromString(list[1].SellPriceFont) as Font;
-                        lblGoldPriceBuy2.Text = list[1].BuyPrice.ToString("N0");
+                        lblGoldPriceBuy2.Text = list[1].BuyPrice.ToString();//"N0"
                         lblGoldPriceBuy2.ForeColor = Color.FromArgb((int)list[1].BuyPriceColor);
                         lblGoldPriceBuy2.Font = cvt.ConvertFromString(list[1].BuyPriceFont) as Font;
                     }
@@ -253,10 +253,10 @@ namespace MYOGoldTypePriceManagement
 
                     if (list[2] != null)
                     {
-                        lblGoldPriceSell3.Text = list[2].SellPrice.ToString("N0");
+                        lblGoldPriceSell3.Text = list[2].SellPrice.ToString();//"N0"
                         lblGoldPriceSell3.ForeColor = Color.FromArgb((int)list[2].SellPriceColor);
                         lblGoldPriceSell3.Font = cvt.ConvertFromString(list[2].SellPriceFont) as Font;
-                        lblGoldPriceBuy3.Text = list[2].BuyPrice.ToString("N0");
+                        lblGoldPriceBuy3.Text = list[2].BuyPrice.ToString();//"N0"
                         lblGoldPriceBuy3.ForeColor = Color.FromArgb((int)list[2].BuyPriceColor);
                         lblGoldPriceBuy3.Font = cvt.ConvertFromString(list[2].BuyPriceFont) as Font;
                     }

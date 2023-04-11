@@ -29,7 +29,7 @@ namespace MYOGoldTypePriceManagement
             if(goldType.Color == null || goldType.Font == null)
             {
                 isValid = false;
-                MessageBox.Show("Font နဲ့ Color ရွေးချယ်သတ်မှတ်ပေးပါ!");
+                MessageBox.Show("Please define Font and Color!");
             }
             else
             {
@@ -46,11 +46,11 @@ namespace MYOGoldTypePriceManagement
                 if (success)
                 {
                     ClearControls();
-                    MessageBox.Show("အသစ်ထည့်သွင်းခြင်း အောင်မြင်ပါသည်!");
+                    MessageBox.Show("Added Successfully!");
                 }
                 else
                 {
-                    MessageBox.Show("အသစ်ထည့်သွင်းခြင်း လုပ်ဆောင်မှု မအောင်မြင်ပါ။ ထပ်မံ ပြုလုပ်ပါ...");
+                    MessageBox.Show("Sorry, please try again...");
                 }
             }
         }
@@ -64,7 +64,7 @@ namespace MYOGoldTypePriceManagement
             if (goldType.Color == null || goldType.Font == null)
             {
                 isValid = false;
-                MessageBox.Show("Font နဲ့ Color ရွေးချယ်သတ်မှတ်ပေးပါ!");
+                MessageBox.Show("Please define Font and Color!");
             }
             else
             {
@@ -81,11 +81,11 @@ namespace MYOGoldTypePriceManagement
                 if (success)
                 {
                     ClearControls();
-                    MessageBox.Show("Update ပြုလုပ်ခြင်း အောင်မြင်ပါသည်!");
+                    MessageBox.Show("Updated Successfully!");
                 }
                 else
                 {
-                    MessageBox.Show("Update ပြုလုပ်ခြင်း လုပ်ဆောင်မှု မအောင်မြင်ပါ။ ထပ်မံ ပြုလုပ်ပါ...");
+                    MessageBox.Show("Sorry, please try again...");
                 }
             }
         }
@@ -99,11 +99,11 @@ namespace MYOGoldTypePriceManagement
             if (success)
             {
                 ClearControls();
-                MessageBox.Show("ပယ်ဖျက်ခြင်း အောင်မြင်ပါသည်!");
+                MessageBox.Show("Deleted Successfully!");
             }
             else
             {
-                MessageBox.Show("ပယ်ဖျက်ခြင်း လုပ်ဆောင်မှု မအောင်မြင်ပါ။ ထပ်မံ ပြုလုပ်ပါ...");
+                MessageBox.Show("Sorry, please try again...");
             }
         }
 
@@ -111,7 +111,7 @@ namespace MYOGoldTypePriceManagement
         {
             if (txtBxGoldTypeInput.Text == string.Empty)
             {
-                MessageBox.Show("ရွှေအမျိုးအစားအမည် ထည့်သွင်းပေးပါ!");
+                MessageBox.Show("Please input Gold Type Name!");
             }
             else
             {
@@ -119,11 +119,6 @@ namespace MYOGoldTypePriceManagement
 
                 if (R == DialogResult.OK)
                 {
-                    /*
-                     var cvt = new FontConverter();
-                     string s = cvt.ConvertToString(this.Font);
-                     Font f = cvt.ConvertFromString(s) as Font;
-                     */
                     txtBxGoldTypeInput.Font = fontDialog1.Font;
 
                     var cvt = new FontConverter();
@@ -138,7 +133,7 @@ namespace MYOGoldTypePriceManagement
         {
             if (txtBxGoldTypeInput.Text == string.Empty)
             {
-                MessageBox.Show("ရွှေအမျိုးအစားအမည် ထည့်သွင်းပေးပါ!");
+                MessageBox.Show("Please input Gold Type Name!");
             }
             else
             {
@@ -146,7 +141,6 @@ namespace MYOGoldTypePriceManagement
 
                 if (R == DialogResult.OK)
                 {
-                    //this.BackColor= colorDialog1.Color;
                     txtBxGoldTypeInput.ForeColor = colorDialog1.Color;
 
                     goldType.Color = colorDialog1.Color.ToArgb();
@@ -163,6 +157,10 @@ namespace MYOGoldTypePriceManagement
         {
             var index = e.RowIndex;
             var cvt = new FontConverter();
+
+            btnGoldTypeInputOK.Enabled = false;
+            btnGoldTypeInputUpdate.Enabled = true;
+            btnGoldTypeInputDelete.Enabled = true;
 
             goldType.Id = (int)dgvGoldTypes.Rows[index].Cells[0].Value;
             txtBxGoldTypeInput.Text = dgvGoldTypes.Rows[index].Cells[1].Value.ToString();
@@ -181,6 +179,12 @@ namespace MYOGoldTypePriceManagement
         private void btnGoldTypeInputExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void manageGoldTypesForm_Load(object sender, EventArgs e)
+        {
+            btnGoldTypeInputUpdate.Enabled = false;
+            btnGoldTypeInputDelete.Enabled = false;
         }
     }
 }
